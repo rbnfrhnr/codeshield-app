@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "codeshield-app"
+version = "0.1.0"
+description = "A FastAPI-based application for text processing and classification."
+authors = ["Robin Frehner <robin.frehner@proton.me>"]
+license = "MIT"
+packages = [{ include = "codeshieldapp" }]
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.110.0"
+uvicorn = {extras = ["standard"], version = "^0.29.0"}
+httpx = "^0.27.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.1.1"
+black = "^24.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

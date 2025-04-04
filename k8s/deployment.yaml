@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codeshield-app
+  labels:
+    app: codeshield-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: codeshield-app
+  template:
+    metadata:
+      labels:
+        app: codeshield-app
+    spec:
+      containers:
+        - name: codeshield-app
+          image: your-dockerhub-username/codeshield-app:latest
+          ports:
+            - containerPort: 8000
