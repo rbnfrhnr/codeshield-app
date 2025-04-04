@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: codeshield-app
-          image: your-dockerhub-username/codeshield-app:latest
+          image: env-rbnfrhnrtest-registry.jcloud.ik-server.com/codeshield-app:v1
           ports:
             - containerPort: 8000
