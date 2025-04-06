@@ -5,7 +5,7 @@ metadata:
   labels:
     app: codeshield-app
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: codeshield-app
@@ -19,3 +19,15 @@ spec:
           image: env-rbnfrhnrtest-registry.jcloud.ik-server.com/codeshield-app:v1
           ports:
             - containerPort: 8000
+          imagePullPolicy: Always
+          env:
+            - name: CFG_FILE
+              value: "/app/config.yaml"
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config.yaml
+              subPath: config.yaml
+      volumes:
+        - name: config-volume
+          configMap:
+            name: app-config

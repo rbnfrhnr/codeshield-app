@@ -1,0 +1,6 @@
+
+
+services:
+  bash:
+    encoder: http://bash-encoder-service:30080/predictions/bash-encoder
+    classifier: http://bash-classifier-service:30008/classify

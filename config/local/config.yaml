@@ -1,0 +1,6 @@
+
+
+services:
+  bash:
+    encoder: http://localhost:8080/predictions/bash-encoder
+    classifier: http://localhost:8008/classify
