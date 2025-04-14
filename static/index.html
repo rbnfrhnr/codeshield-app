@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO Meta Tags -->
+    <title>Cybersecurity Detection Tools | CyberSec Tools</title>
+    <meta name="description"
+        content="Enhance your cybersecurity with our advanced detection tools. From Bash and PowerShell classifiers to macro analyzers, CyberSec Tools offers AI-powered solutions to secure your systems.">
+    <meta name="keywords"
+        content="cybersecurity, detection tools, AI, Bash classifier, PowerShell classifier, macro analyzer, cyber threats, CyberSec Tools">
+    <link rel="canonical" href="https://www.example.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Cybersecurity Detection Tools | CyberSec Tools">
+    <meta property="og:description"
+        content="Enhance your cybersecurity with our advanced detection tools. Explore our range of AI-powered solutions designed to secure your systems.">
+    <meta property="og:image" content="https://www.example.com/og-image.jpg">
+    <meta property="og:url" content="https://www.example.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cybersecurity Detection Tools | CyberSec Tools">
+    <meta name="twitter:description" content="Enhance your cybersecurity with our advanced detection tools.">
+    <meta name="twitter:image" content="https://www.example.com/og-image.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        async function submitBashInput() {
+            const input = document.getElementById('bashInput').value;
+            const responseMessage = document.getElementById('responseMessage');
+
+            responseMessage.classList.add('hidden');
+            responseMessage.textContent = '';
+
+            try {
+                const res = await fetch('/process', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ text: input })
+                });
+
+                const data = await res.json();
+
+                if (res.ok && data && 'label' in data && 'probs' in data) {
+                    const labelText = data.label === 0 ? 'Benign' : 'Malicious';
+                    const [probBenign, probMalicious] = data.probs[0];
+
+                    responseMessage.innerHTML = `
+                        <strong>Prediction:</strong> ${labelText}<br>
+                        <strong>Likelihoods:</strong>
+                        &nbsp;&nbsp;&bull; Benign: ${(probBenign * 100).toFixed(2)}%
+                        &nbsp;&nbsp;&bull; Malicious: ${(probMalicious * 100).toFixed(2)}%
+                    `;
+                    responseMessage.classList.remove('hidden');
+                } else {
+                    throw new Error("Unexpected response format.");
+                }
+            } catch (error) {
+                responseMessage.classList.remove('hidden');
+                responseMessage.textContent = 'Error: ' + error.message;
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="absolute top-0 left-0 right-0 z-10 px-6 py-4">
+            <div class="flex justify-between items-center text-white">
+                <div class="text-2xl font-bold">CyberSec Tools</div>
+                <div class="space-x-6 text-sm md:text-base">
+                    <a href="#products" class="hover:underline">Products</a>
+                    <a href="#about" class="hover:underline">About</a>
+                    <a href="#impressum" class="hover:underline">Impressum</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section
+            class="h-[80vh] flex items-center justify-center bg-gradient-to-r from-indigo-600 to-blue-500 text-white"
+            style="clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);">
+
+            <!-- Decorative SVG (only on desktop) -->
+            <div class="relative left-[-15%] top-0 bottom-0 w-1/2 hidden md:block">
+                <img src="/static/assets/images/helvetia_geometrized.svg" alt="Abstract decorative graphic"
+                    class="h-full w-full object-cover opacity-40" />
+            </div>
+
+            <!-- Hero Text Content -->
+            <div
+                class="container mx-auto flex flex-col md:flex-row items-center md:items-start px-6 md:px-12 relative left-[-15%]">
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h1 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
+                        Enhance Your Cybersecurity with Advanced Detection Tools
+                    </h1>
+                    <p class="text-sm sm:text-base md:text-lg mb-6">
+                        Extend your threat detection capabilities and secure your systems with cutting-edge
+                        cybersecurity tools.
+                    </p>
+                    <a href="#products"
+                        class="bg-white text-indigo-600 py-3 px-6 rounded-lg font-semibold text-sm sm:text-lg hover:bg-indigo-700 transition duration-300">
+                        Explore Our Tools
+                    </a>
+                </div>
+                <!-- Desktop-only Image -->
+                <div class="mt-8 md:mt-0 md:w-1/2 w-full hidden md:block">
+                    <img src="https://via.placeholder.com/600" alt="Cybersecurity Detection Illustration"
+                        class="rounded-lg shadow-xl w-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- Built and Hosted Banner -->
+        <section class="bg-gray-100 px-6 py-1">
+            <div class="flex justify-end">
+                <p class="text-gray-700 text-sm">🇨🇭 Built and hosted in Switzerland</p>
+            </div>
+        </section>
+
+        <!-- Products Overview Section -->
+        <section class="py-16 px-6 bg-gray-50" id="products">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-12">Our Cybersecurity Tools</h2>
+                <div class="flex flex-col sm:flex-row gap-12">
+                    <article class="w-full sm:w-1/3">
+                        <img src="https://via.placeholder.com/300" alt="Bash Classifier tool screenshot"
+                            class="rounded-lg shadow-xl mb-6">
+                        <h3 class="text-2xl font-semibold mb-2">Bash Classifier</h3>
+                        <p class="text-lg">An AI-based tool for classifying Bash scripts and commands into benign and
+                            malicious categories.</p>
+                        <a href="bash-classifier.html" class="text-indigo-600 font-semibold">Learn More</a>
+                    </article>
+                    <article class="w-full sm:w-1/3">
+                        <img src="https://via.placeholder.com/300" alt="PowerShell Classifier tool screenshot"
+                            class="rounded-lg shadow-xl mb-6">
+                        <h3 class="text-2xl font-semibold mb-2">PowerShell Classifier</h3>
+                        <p class="text-lg">Classify PowerShell scripts and commands, identifying malicious activity in
+                            PowerShell executions.</p>
+                        <a href="powershell-classifier.html" class="text-indigo-600 font-semibold">Learn More</a>
+                    </article>
+                    <article class="w-full sm:w-1/3">
+                        <img src="https://via.placeholder.com/300" alt="Macro Analyzer tool screenshot"
+                            class="rounded-lg shadow-xl mb-6">
+                        <h3 class="text-2xl font-semibold mb-2">Macro Analyzer</h3>
+                        <p class="text-lg">An AI-powered tool to detect malicious macros in Office documents (Word,
+                            Excel, PowerPoint).</p>
+                        <a href="macroanalyzer.html" class="text-indigo-600 font-semibold">Learn More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- In-Depth Sections -->
+        <section class="py-16 px-6 bg-white">
+            <div class="container mx-auto flex flex-col sm:flex-row items-center">
+                <div class="sm:w-1/2 mb-8 sm:mb-0">
+                    <h2 class="text-3xl font-semibold mb-4">Bash Classifier - In-Depth</h2>
+                    <p class="text-lg mb-6">The Bash Classifier uses AI to analyze Bash scripts and commands,
+                        classifying them into benign and malicious categories...</p>
+                    <a href="bash-classifier.html" class="text-indigo-600 font-semibold block mb-6">Learn More</a>
+                    <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <label for="bashInput" class="block text-lg font-semibold mb-2">Try it</label>
+                        <textarea id="bashInput" placeholder="Enter a Bash script or command"
+                            class="w-full p-3 border rounded mb-4 h-32"></textarea>
+                        <button onclick="submitBashInput()"
+                            class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Submit</button>
+                        <p id="responseMessage" class="mt-2 text-sm hidden">Submitted!</p>
+                    </div>
+                </div>
+                <div class="sm:w-1/2">
+                    <img src="https://via.placeholder.com/400" alt="Bash Classifier in action"
+                        class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-6 bg-gray-50">
+            <div class="container mx-auto flex flex-col sm:flex-row items-center sm:flex-row-reverse">
+                <div class="sm:w-1/2 mb-8 sm:mb-0">
+                    <h2 class="text-3xl font-semibold mb-4">PowerShell Classifier - In-Depth</h2>
+                    <p class="text-lg">PowerShell Classifier offers the same capabilities as the Bash Classifier but
+                        specifically targets PowerShell scripts.</p>
+                    <a href="powershell-classifier.html" class="text-indigo-600 font-semibold">Learn More</a>
+                </div>
+                <div class="sm:w-1/2">
+                    <img src="https://via.placeholder.com/400" alt="PowerShell Classifier in action"
+                        class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-6 bg-white">
+            <div class="container mx-auto flex flex-col sm:flex-row items-center">
+                <div class="sm:w-1/2 mb-8 sm:mb-0">
+                    <h2 class="text-3xl font-semibold mb-4">Macro Analyzer - In-Depth</h2>
+                    <p class="text-lg">The Macro Analyzer scans Office documents (Word, PowerPoint, Excel) for malicious
+                        macros...</p>
+                    <a href="macroanalyzer.html" class="text-indigo-600 font-semibold">Learn More</a>
+                </div>
+                <div class="sm:w-1/2">
+                    <img src="https://via.placeholder.com/400" alt="Macro Analyzer in action"
+                        class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-16 px-6 bg-white" id="about">
+            <div class="container mx-auto flex flex-col sm:flex-row items-center">
+                <div class="sm:w-1/2 mb-8 sm:mb-0">
+                    <h2 class="text-4xl font-bold mb-4">About Us</h2>
+                    <p class="text-lg">We are a dedicated team of cybersecurity experts developing AI-powered tools to
+                        detect and mitigate cyber threats. Our mission is to secure systems worldwide through innovative
+                        detection and prevention technologies.</p>
+                </div>
+                <div class="sm:w-1/2">
+                    <img src="https://via.placeholder.com/400" alt="Our team of cybersecurity experts"
+                        class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4" id="impressum">
+        <p>&copy; 2025 CyberSec Tools. All Rights Reserved. | <a href="#impressum" class="underline">Impressum</a></p>
+    </footer>
+
+</body>
+
+</html>

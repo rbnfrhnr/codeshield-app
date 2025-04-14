@@ -28,7 +28,7 @@ class BaseApplicationConfig(metaclass=SingletonMeta):
     def __init__(self) -> None:
         self.config_path = (
             os.environ["CFG_FILE"]
-            if "CFG" in os.environ
+            if "CFG_FILE" in os.environ
             else "./config/local/config.yaml"
         )
         self.cfg = yaml.safe_load(open(self.config_path, "r"))

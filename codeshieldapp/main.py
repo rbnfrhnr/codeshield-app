@@ -2,8 +2,11 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 import uvicorn
 from codeshieldapp.service.bash_scanner import BashScanService
 from fastapi import Depends
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
+
+app.mount("/static", StaticFiles(directory='/app/static'), name="static")
 
 @app.post("/process")
 async def process_text(
