@@ -10,16 +10,10 @@ plugins:
   - "@semantic-release/changelog"
   - 
     path: "@semantic-release/exec"
-    publishCmd: |
-      poetry version ${nextRelease.version} && python -c "
-      import re; 
-      version_file = 'codeshieldapp/__version__.py'; 
-      version = '${nextRelease.version}'; 
-      with open(version_file, 'r+') as f: 
-          content = f.read(); 
-          content = re.sub(r'(__version__ = \\\")(.*)(\\\\")', r'\\\\1' + version + r'\\\\3', content); 
-          f.seek(0); 
-          f.write(content)"
+    prepareCmd: |
+        sed --in-place 's/__version__ = ".*"/__version__ = "${nextRelease.version}"/' codeshieldapp/__version__.py
+        poetry lock --no-update
+        poetry version ${nextRelease.version}
   - 
     path: "@semantic-release/git"
     assets:
