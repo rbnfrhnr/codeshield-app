@@ -17,6 +17,20 @@ httpx = "^0.27.0"
 pytest = "^8.1.1"
 black = "^24.3.0"
 
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = git
+style = "pep440"
+bump = true
+
+[tool.poetry-dynamic-versioning.files."codeshieldapp.__version__.py"]
+persistent-substitution = true
+initial-content = """
+ # These version placeholders will be substituted
+ __version__ = "0.0.0"
+ __version_tuple__ = (0, 0, 0)
+"""
+
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
