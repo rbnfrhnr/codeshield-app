@@ -11,17 +11,17 @@ plugins:
   - 
     path: "@semantic-release/exec"
     successCmd: |
-      echo "Preparing version for release: {{nextRelease.version}}"
+      echo "Preparing version for release: {{nextRelease.channel}}"
 
       # Update __version__.py with release version (including -rc if present)
-      if [ "$CHANNEL" = "rc" ]; then
+      if [ "{{nextRelease.channel}}" = "rc" ]; then
         echo "__version__ = '{{nextRelease.version}}-rc'" > codeshieldapp/__version__.py
       else
         echo "__version__ = '{{nextRelease.version}}'" > codeshieldapp/__version__.py
       fi
 
       # Update pyproject.toml version
-      if [ "$CHANNEL" = "rc" ]; then
+      if [ "{{nextRelease.channel}}" = "rc" ]; then
         sed -i "s/^version = .*/version = \"{{nextRelease.version}}-rc\"/" pyproject.toml
       else
         sed -i "s/^version = .*/version = \"{{nextRelease.version}}\"/" pyproject.toml
