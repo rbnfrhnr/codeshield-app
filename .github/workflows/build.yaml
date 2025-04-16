@@ -56,9 +56,21 @@ jobs:
           mkdir -p build
           cp dist/*.whl build/
 
-      - name: Upload wheel to GitHub Release
+      - name: Extract version from wheel filename
+        id: extract_version
+        run: |
+          WHEEL_FILE=$(ls dist/*.whl | head -n 1)
+          echo "Found wheel: $WHEEL_FILE"
+          # Extract version from filename: name-version-py3-none-any.whl
+          VERSION=$(basename "$WHEEL_FILE" | sed -E 's/^[^-]+-([^-]+)-.*$/\1/')
+          echo "PACKAGE_VERSION=$VERSION" >> $GITHUB_ENV
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release with wheel
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: v${{ steps.extract_version.outputs.version }}
+          name: Release v${{ steps.extract_version.outputs.version }}
           files: build/*.whl
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
