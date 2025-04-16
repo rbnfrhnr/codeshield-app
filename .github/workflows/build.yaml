@@ -135,4 +135,4 @@ jobs:
           fi
 
           echo "Updating  $DEPLOYMENT_FILE"
-          kubectl apply -f "$DEPLOYMENT_FILE"
+          kubectl rollout restart deployment -f "$DEPLOYMENT_FILE"
