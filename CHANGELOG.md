@@ -1,3 +1,10 @@
+# [1.2.0-rc.2](https://github.com/rbnfrhnr/codeshield-app/compare/v1.2.0-rc.1...v1.2.0-rc.2) (2025-04-16)
+
+
+### Bug Fixes
+
+* kubectl rollout restart instead of apply ([10c6ad8](https://github.com/rbnfrhnr/codeshield-app/commit/10c6ad87eb4ba7d1a9f0e710c0095bcbdc470c3d))
+
 # [1.2.0-rc.1](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.29-rc.6...v1.2.0-rc.1) (2025-04-16)
 
 
