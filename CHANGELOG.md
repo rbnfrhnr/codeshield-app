@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.1...v1.1.2) (2025-04-16)
+
+
+### Bug Fixes
+
+* add rc suffix to release candidates ([57f409d](https://github.com/rbnfrhnr/codeshield-app/commit/57f409de243fd441584276c082797317e8faa663))
+
 ## [1.1.1](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.0...v1.1.1) (2025-04-16)
 
 
