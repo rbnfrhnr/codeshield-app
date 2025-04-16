@@ -1,3 +1,12 @@
+## [1.1.25](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.24...v1.1.25) (2025-04-16)
+
+
+### Bug Fixes
+
+* added poetry dynamic versioning ([80ac711](https://github.com/rbnfrhnr/codeshield-app/commit/80ac711a935e46fe03d83134c132c9fe4781ec94))
+* poetry dyn versioning plugin ([1a7358c](https://github.com/rbnfrhnr/codeshield-app/commit/1a7358c79c456494f075f2bafdc17247e53e7003))
+* updated poetry.lock ([fd57537](https://github.com/rbnfrhnr/codeshield-app/commit/fd575372bfbdb7e0e41cf838349a50bdbbf48b84))
+
 ## [1.1.24](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.23...v1.1.24) (2025-04-16)
 
 
