@@ -11,17 +11,15 @@ plugins:
   - 
     path: "@semantic-release/exec"
     prepareCmd: |
-        # Determine if we are on the staging branch or not
+        # Define version with `rc` suffix for staging branch
         if [[ "${nextRelease.channel}" == "rc" ]]; then
           version="${nextRelease.version}-rc"
         else
           version="${nextRelease.version}"
         fi
 
-        # Update __version__.py with the version
+        # Now use the defined `version` to update the __version__.py and pyproject.toml
         sed --in-place 's/__version__ = ".*"/__version__ = "'${version}'"/' codeshieldapp/__version__.py
-
-        # Update pyproject.toml with the version
         sed --in-place 's/version = ".*"/version = "'${version}'"/' pyproject.toml
 
         # Update poetry lock file and version
