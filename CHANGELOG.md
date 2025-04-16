@@ -1,3 +1,10 @@
+## [1.1.16](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.15...v1.1.16) (2025-04-16)
+
+
+### Bug Fixes
+
+* triggering cicd semantic release for testing ([aff32ca](https://github.com/rbnfrhnr/codeshield-app/commit/aff32ca810b1a2fc21a4782bde1e69f7cec8e78a))
+
 ## [1.1.15](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.14...v1.1.15) (2025-04-16)
 
 
