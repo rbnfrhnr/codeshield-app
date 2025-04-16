@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.6...v1.1.7) (2025-04-16)
+
+
+### Bug Fixes
+
+* moved to .releaserc yaml ([2e18971](https://github.com/rbnfrhnr/codeshield-app/commit/2e189712cbd01b8596cb51344878f4e61e91e69e))
+
 ## [1.1.6](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.5...v1.1.6) (2025-04-16)
 
 
