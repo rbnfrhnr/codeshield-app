@@ -1,3 +1,10 @@
+## [1.1.29-rc.1](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.28...v1.1.29-rc.1) (2025-04-16)
+
+
+### Bug Fixes
+
+* cicd build default semantic release ([2b8d6b5](https://github.com/rbnfrhnr/codeshield-app/commit/2b8d6b5d3198d16063bb0b5bdc4021c7b91a768f))
+
 ## [1.1.28](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.27...v1.1.28) (2025-04-16)
 
 
