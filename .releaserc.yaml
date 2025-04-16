@@ -8,6 +8,7 @@ plugins:
   - "@semantic-release/commit-analyzer"
   - "@semantic-release/release-notes-generator"
   - "@semantic-release/changelog"
+
   - 
     path: "@semantic-release/exec"
     prepareCmd: |
@@ -22,6 +23,8 @@ plugins:
           sed -i "s/^version = .*/version = \"{{nextRelease.version}}\"/" pyproject.toml
         fi
       '
+
+  - 
     path: "@semantic-release/git"
     assets:
       - "CHANGELOG.md"
