@@ -1,8 +1,8 @@
 branches:
   - main
   - staging:
-      prerelease: true
-      channel: rc
+      prerelease: rc
+      channel: staging
 
 plugins:
   - "@semantic-release/commit-analyzer"
