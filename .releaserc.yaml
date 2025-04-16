@@ -14,7 +14,7 @@ plugins:
       echo "Preparing version for release: {{nextRelease.version}}"
 
       # Update __version__.py with release version (including -rc if present)
-      if if [ "$CHANNEL" = "rc" ]; then
+      if [ "$CHANNEL" = "rc" ]; then
         echo "__version__ = '{{nextRelease.version}}-rc'" > codeshieldapp/__version__.py
       else
         echo "__version__ = '{{nextRelease.version}}'" > codeshieldapp/__version__.py
@@ -41,5 +41,6 @@ plugins:
       - "CHANGELOG.md"
       - "pyproject.toml"
       - "codeshieldapp/__version__.py"
+      - "build/*.whl"
     releaseName: "{{nextRelease.version}}"
     prerelease: true
