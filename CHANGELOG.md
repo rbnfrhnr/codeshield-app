@@ -1,3 +1,10 @@
+# [1.2.0-rc.1](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.29-rc.6...v1.2.0-rc.1) (2025-04-16)
+
+
+### Features
+
+* added version info endpoint to fastapi returning package version ([7b7c132](https://github.com/rbnfrhnr/codeshield-app/commit/7b7c132f48b569e2a31a8d9a0512518581a2ca81))
+
 ## [1.1.29-rc.6](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.29-rc.5...v1.1.29-rc.6) (2025-04-16)
 
 
