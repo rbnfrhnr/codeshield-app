@@ -50,3 +50,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npx semantic-release
+      - name: Build wheel package
+        run: |
+          poetry build
+          mkdir -p build
+          cp dist/*.whl build/
+
+      - name: Upload wheel to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/*.whl
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
