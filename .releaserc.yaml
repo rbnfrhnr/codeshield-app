@@ -12,20 +12,24 @@ plugins:
   - 
     path: "@semantic-release/exec"
     prepareCmd: |
-      if [ "${{nextRelease.channel}}" = "rc" ]; then
-        echo '__version__ = "${{nextRelease.version}}-rc"' > codeshieldapp/__version__.py
-        sed -i 's/^version = .*/version = "${{nextRelease.version}}-rc"/' pyproject.toml
+      if [ "${nextRelease.channel}" = "rc" ]; then
+        echo '__version__ = "${nextRelease.version}-rc"' > codeshieldapp/__version__.py
+        sed -i 's/^version = .*/version = "${nextRelease.version}-rc"/' pyproject.toml
       else
-        echo '__version__ = "${{nextRelease.version}}"' > codeshieldapp/__version__.py
-        sed -i 's/^version = .*/version = "${{nextRelease.version}}"/' pyproject.toml
+        echo '__version__ = "${nextRelease.version}"' > codeshieldapp/__version__.py
+        sed -i 's/^version = .*/version = "${nextRelease.version}"/' pyproject.toml
       fi
+
   - 
     path: "@semantic-release/git"
     assets:
       - "CHANGELOG.md"
       - "pyproject.toml"
       - "codeshieldapp/__version__.py"
-    message: "chore(release): {{nextRelease.version}} [skip ci]\n\n{{nextRelease.notes}}"
+    message: |
+      chore(release): ${nextRelease.version} [skip ci]
+
+      ${nextRelease.notes}
 
   - 
     path: "@semantic-release/github"
@@ -34,5 +38,5 @@ plugins:
       - "pyproject.toml"
       - "codeshieldapp/__version__.py"
       - "build/*.whl"
-    releaseName: "{{nextRelease.version}}"
+    releaseName: ${nextRelease.version}
     prerelease: true
