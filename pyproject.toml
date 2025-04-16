@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "codeshield-app"
-version = "1.2.0-rc.2"
+version = "1.2.0-rc.3"
 description = "A FastAPI-based application for text processing and classification."
 authors = ["Robin Frehner <robin.frehner@proton.me>"]
 license = "MIT"

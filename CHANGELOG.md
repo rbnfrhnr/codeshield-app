@@ -1,3 +1,10 @@
+# [1.2.0-rc.3](https://github.com/rbnfrhnr/codeshield-app/compare/v1.2.0-rc.2...v1.2.0-rc.3) (2025-04-16)
+
+
+### Bug Fixes
+
+* add rollout restart if no change ([cda032d](https://github.com/rbnfrhnr/codeshield-app/commit/cda032d37459a4a48c744289bacbcea446e53bfb))
+
 # [1.2.0-rc.2](https://github.com/rbnfrhnr/codeshield-app/compare/v1.2.0-rc.1...v1.2.0-rc.2) (2025-04-16)
 
 
