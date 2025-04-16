@@ -142,3 +142,4 @@ jobs:
           if [[ "$APPLY_OUTPUT" == *"unchanged"* ]]; then
             echo "Triggering rollout restart for deployment codeshield-app"
             kubectl rollout restart deployment/codeshield-app
+          fi
