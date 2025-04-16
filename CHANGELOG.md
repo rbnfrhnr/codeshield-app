@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/rbnfrhnr/codeshield-app/compare/v1.0.0...v1.1.0) (2025-04-16)
+
+
+### Features
+
+* python version file under semantic release now ([e3f80ad](https://github.com/rbnfrhnr/codeshield-app/commit/e3f80ad02e1bffcfc495eb9b6c1b2803a33ed7f9))
+
 # 1.0.0 (2025-04-16)
 
 
