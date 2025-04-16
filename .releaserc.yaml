@@ -10,19 +10,13 @@ plugins:
   - "@semantic-release/changelog"
   - 
     path: "@semantic-release/exec"
-    prepareCmd: >
-      bash -c '
-        VERSION="{{nextRelease.version}}";
-        CHANNEL="{{nextRelease.channel}}";
-        if [ "$CHANNEL" = "rc" ]; then
-          VERSION="${VERSION}-rc";
-        fi;
-        echo "Setting version to $VERSION";
-        sed -i "s/__version__ = \".*\"/__version__ = \"$VERSION\"/" codeshieldapp/__version__.py;
-        sed -i "s/^version = \".*\"/version = \"$VERSION\"/" pyproject.toml;
-        poetry lock --no-update;
-        poetry version $VERSION;
-      '
+    successCmd: |
+      # Update version in __version__.py
+      sed -i "s/^__version__ = .*/__version__ = '{{nextRelease.version}}'/" codeshieldapp/__version__.py
+
+      # Update version in pyproject.toml
+      sed -i "s/^version = .*/version = \"{{nextRelease.version}}\"/" pyproject.toml
+
   - 
     path: "@semantic-release/git"
     assets:
