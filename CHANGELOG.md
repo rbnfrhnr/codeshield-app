@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.3...v1.1.4) (2025-04-16)
+
+
+### Bug Fixes
+
+* syntax error in publishcmd for semantic release ([205d44a](https://github.com/rbnfrhnr/codeshield-app/commit/205d44ad4c0b3671fd65b08781f0c44db43cfe6d))
+
 ## [1.1.3](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.2...v1.1.3) (2025-04-16)
 
 
