@@ -1,3 +1,12 @@
+## [1.1.15](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.14...v1.1.15) (2025-04-16)
+
+
+### Bug Fixes
+
+* changed to env var interpretation ([d0ba5db](https://github.com/rbnfrhnr/codeshield-app/commit/d0ba5db0ded1b15629f32c7ea0e53e3d70195fae))
+* reset version ([d3df8bb](https://github.com/rbnfrhnr/codeshield-app/commit/d3df8bbf4e4a03b0da2eb3b23dde084c9a8a845d))
+* yet another change... ([99ef702](https://github.com/rbnfrhnr/codeshield-app/commit/99ef702b5959397f8843c1db0f507486e1e482dc))
+
 ## [1.1.14](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.13...v1.1.14) (2025-04-16)
 
 
