@@ -74,3 +74,22 @@ jobs:
           files: build/*.whl
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+      - name: Build & Tag Docker Image
+        run: |
+          VERSION=${{ steps.extract_version.outputs.version }}
+          REGISTRY=env-rbnfrhnrtest-registry.jcloud.ik-server.com/codeshield-app
+
+          echo "Building Docker image for version $VERSION"
+          docker build -t $REGISTRY:$VERSION .
+
+          if [[ "${GITHUB_REF##*/}" == "main" ]]; then
+            docker tag $REGISTRY:$VERSION $REGISTRY:latest
+            docker push $REGISTRY:latest
+          elif [[ "${GITHUB_REF##*/}" == "staging" ]]; then
+            docker tag $REGISTRY:$VERSION $REGISTRY:latest-rc
+            docker push $REGISTRY:latest-rc
+          fi
+
+          docker push $REGISTRY:$VERSION
