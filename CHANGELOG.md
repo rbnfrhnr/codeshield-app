@@ -1,3 +1,10 @@
+## [1.1.29-rc.5](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.29-rc.4...v1.1.29-rc.5) (2025-04-16)
+
+
+### Bug Fixes
+
+* build and publish new version to gihub ([d7c978f](https://github.com/rbnfrhnr/codeshield-app/commit/d7c978fc63fc8816cb63c627aef37419dcb435a0))
+
 ## [1.1.29-rc.4](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.29-rc.3...v1.1.29-rc.4) (2025-04-16)
 
 
