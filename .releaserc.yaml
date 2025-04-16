@@ -8,7 +8,13 @@ plugins:
   - "@semantic-release/commit-analyzer"
   - "@semantic-release/release-notes-generator"
   - "@semantic-release/changelog"
+  - 
+    path: "@semantic-release/exec"
+    successCmd: |
+      echo "Preparing version for release: {{nextRelease.version}}"
 
+      # Write version to __version__.py
+      echo "__version__ = '{{nextRelease.version}}'" > codeshieldapp/__version__.py
   - 
     path: "@semantic-release/git"
     assets:
