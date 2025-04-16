@@ -111,6 +111,8 @@ jobs:
 
       - name: Configure Kubeconfig
         run: |
+          mkdir -p ~/.kube 
+
           if [[ "${GITHUB_REF##*/}" == "main" ]]; then
             echo "${{ secrets.KUBECONFIG_MAIN }}" > ~/.kube/config
           elif [[ "${GITHUB_REF##*/}" == "staging" ]]; then
