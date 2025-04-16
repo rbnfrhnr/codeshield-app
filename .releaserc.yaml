@@ -10,25 +10,26 @@ plugins:
   - "@semantic-release/changelog"
   - 
     path: "@semantic-release/exec"
-    prepareCmd: >
+    prepareCmd: |
       bash -c '
-        echo "Preparing version for release: {{nextRelease.channel}}"
+        VERSION="{{nextRelease.version}}"
+        CHANNEL="{{nextRelease.channel}}"
 
-        # Update __version__.py with release version (including -rc if present)
-        if [ "{{nextRelease.channel}}" = "rc" ]; then
-          echo "__version__ = '{{nextRelease.version}}-rc'" > codeshieldapp/__version__.py
-        else
-          echo "__version__ = '{{nextRelease.version}}'" > codeshieldapp/__version__.py
+        echo "Preparing version for release: $CHANNEL"
+
+        # Set version string with "-rc" if on staging
+        if [ "$CHANNEL" = "rc" ]; then
+          VERSION="${VERSION}-rc"
         fi
+
+        echo "Final version to write: $VERSION"
+
+        # Write version to __version__.py
+        echo "__version__ = \"$VERSION\"" > codeshieldapp/__version__.py
 
         # Update pyproject.toml version
-        if [ "{{nextRelease.channel}}" = "rc" ]; then
-          sed -i "s/^version = .*/version = \"{{nextRelease.version}}-rc\"/" pyproject.toml
-        else
-          sed -i "s/^version = .*/version = \"{{nextRelease.version}}\"/" pyproject.toml
-        fi
+        sed -i "s/^version = .*/version = \"$VERSION\"/" pyproject.toml
       '
-  - 
     path: "@semantic-release/git"
     assets:
       - "CHANGELOG.md"
