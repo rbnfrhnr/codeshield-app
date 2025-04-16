@@ -12,8 +12,9 @@ plugins:
     path: "@semantic-release/exec"
     prepareCmd: >
       bash -c '
-        VERSION="${nextRelease.version}";
-        if [ "${nextRelease.channel}" = "rc" ]; then
+        VERSION="{{nextRelease.version}}";
+        CHANNEL="{{nextRelease.channel}}";
+        if [ "$CHANNEL" = "rc" ]; then
           VERSION="${VERSION}-rc";
         fi;
         echo "Setting version to $VERSION";
