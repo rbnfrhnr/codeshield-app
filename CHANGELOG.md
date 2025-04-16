@@ -1,3 +1,10 @@
+## [1.1.21](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.20...v1.1.21) (2025-04-16)
+
+
+### Bug Fixes
+
+* branch definition ([0f13549](https://github.com/rbnfrhnr/codeshield-app/commit/0f1354971a721b173c5e0c6c3a40b9123a8a7a45))
+
 ## [1.1.20](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.19...v1.1.20) (2025-04-16)
 
 
