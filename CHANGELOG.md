@@ -1,3 +1,11 @@
+## [1.1.28](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.27...v1.1.28) (2025-04-16)
+
+
+### Bug Fixes
+
+* back to more sophisticated setup ([aa1fffa](https://github.com/rbnfrhnr/codeshield-app/commit/aa1fffafe20869b47d490b1fc29c940d8b3b5c12))
+* updated poetry lock ([d6beea6](https://github.com/rbnfrhnr/codeshield-app/commit/d6beea6035704206e891811060e1d0d384a3221f))
+
 ## [1.1.25](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.24...v1.1.25) (2025-04-16)
 
 
