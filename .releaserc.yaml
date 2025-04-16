@@ -12,6 +12,7 @@ plugins:
   - 
     path: "@semantic-release/exec"
     prepareCmd: |
+      echo "channel is ${nextRelease.channel}"
       if [ "${nextRelease.channel}" = "rc" ]; then
         echo '__version__ = "${nextRelease.version}-rc"' > codeshieldapp/__version__.py
         sed -i 's/^version = .*/version = "${nextRelease.version}-rc"/' pyproject.toml
