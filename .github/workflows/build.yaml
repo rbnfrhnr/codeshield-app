@@ -102,3 +102,35 @@ jobs:
             docker tag $IMAGE:$VERSION $IMAGE:latest-rc
             docker push $IMAGE:latest-rc
           fi
+
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'latest'
+
+      - name: Configure Kubeconfig
+        run: |
+          if [[ "${GITHUB_REF##*/}" == "main" ]]; then
+            echo "${{ secrets.KUBECONFIG_MAIN }}" > ~/.kube/config
+          elif [[ "${GITHUB_REF##*/}" == "staging" ]]; then
+            echo "${{ secrets.KUBECONFIG_STAGING }}" > ~/.kube/config
+          else
+            echo "Unsupported branch for kubeconfig"
+            exit 1
+          fi
+          chmod 600 ~/.kube/config
+
+      - name: Deploy to Kubernetes
+        run: |
+          if [[ "${GITHUB_REF##*/}" == "main" ]]; then
+            DEPLOYMENT_FILE="k8s/main/deployment.yaml"
+          elif [[ "${GITHUB_REF##*/}" == "staging" ]]; then
+            DEPLOYMENT_FILE="k8s/staging/deployment.yaml"
+          else
+            echo "Unknown branch, skipping deploy"
+            exit 0
+          fi
+
+          echo "Updating  $DEPLOYMENT_FILE"
+          kubectl apply -f "$DEPLOYMENT_FILE"

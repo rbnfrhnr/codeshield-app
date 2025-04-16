@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: codeshield-app
-          image: env-rbnfrhnrtest-registry.jcloud.ik-server.com/codeshield-app:v1
+          image: env-rbnfrhnrtest-registry.jcloud.ik-server.com/codeshield-app:latest-rc
           ports:
             - containerPort: 8000
           imagePullPolicy: Always
