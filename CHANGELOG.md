@@ -1,3 +1,10 @@
+## [1.1.10](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.9...v1.1.10) (2025-04-16)
+
+
+### Bug Fixes
+
+* very simple if else for rc suffix ([b6098a2](https://github.com/rbnfrhnr/codeshield-app/commit/b6098a24ceb1da3f02bc049350fc009c813c3469))
+
 ## [1.1.9](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.8...v1.1.9) (2025-04-16)
 
 
