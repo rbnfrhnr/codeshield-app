@@ -3,10 +3,12 @@ import uvicorn
 from codeshieldapp.service.bash_scanner import BashScanService
 from fastapi import Depends
 from fastapi.staticfiles import StaticFiles
+from codeshieldapp.__version__ import __version__
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory='/app/static'), name="static")
+app.mount("/static", StaticFiles(directory="/app/static"), name="static")
+
 
 @app.post("/process")
 async def process_text(
@@ -35,6 +37,11 @@ async def websocket_endpoint(
         print("Client disconnected")
     except Exception as e:
         await websocket.send_json({"error": str(e)})
+
+
+@app.get("/version", summary="Get application version")
+async def get_version():
+    return {"version": __version__}
 
 
 if __name__ == "__main__":
