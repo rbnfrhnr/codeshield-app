@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.0...v1.1.1) (2025-04-16)
+
+
+### Bug Fixes
+
+* typo in package name for .release.rc ([1a91e61](https://github.com/rbnfrhnr/codeshield-app/commit/1a91e610dc63bd58c40021a858000470c17b5b4a))
+
 # [1.1.0](https://github.com/rbnfrhnr/codeshield-app/compare/v1.0.0...v1.1.0) (2025-04-16)
 
 
