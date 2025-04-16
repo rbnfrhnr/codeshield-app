@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.2...v1.1.3) (2025-04-16)
+
+
+### Bug Fixes
+
+* .releaserc should update __version__ and pyproject.toml ([d13c9f1](https://github.com/rbnfrhnr/codeshield-app/commit/d13c9f12b9b45f75a0f08d84ebefda394156d8c2))
+
 ## [1.1.2](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.1...v1.1.2) (2025-04-16)
 
 
