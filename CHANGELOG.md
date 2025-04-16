@@ -1,3 +1,10 @@
+## [1.1.22](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.21...v1.1.22) (2025-04-16)
+
+
+### Bug Fixes
+
+* another try defining rc candidate ([bdc564d](https://github.com/rbnfrhnr/codeshield-app/commit/bdc564d8f6999696ccac1b53aadbcf6a1f0339f9))
+
 ## [1.1.21](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.20...v1.1.21) (2025-04-16)
 
 
