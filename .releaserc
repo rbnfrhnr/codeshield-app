@@ -1,32 +1,32 @@
 {
     "branches": [
-      "main",
-      {
-        "name": "staging",
-        "prerelease": "rc",
-        "channel": "rc"
-      }
+        "main",
+        {
+            "name": "staging",
+            "prerelease": "rc",
+            "channel": "rc"
+        }
     ],
     "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      [
-        "@semantic-release/exec",
-        {
-          "publishCmd": "poetry version ${nextRelease.version} && python -c 'import re; version_file = \"codeshieldapp/__version__.py\"; version = \"${nextRelease.version}\"; with open(version_file, \"r+\") as f: content = f.read(); content = re.sub(r\"(__version__ = \").*(\")\", f'\\1\"{version}\"\\2', content); f.seek(0); f.write(content)'"
-        }
-      ],
-      [
-        "@semantic-release/git",
-        {
-          "assets": [
-            "CHANGELOG.md",
-            "pyproject.toml",
-            "codeshieldapp/__version__.py"
-          ],
-          "message": "chore(release): ${nextRelease.version}-rc [skip ci]\n\n${nextRelease.notes}"
-        }
-      ]
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator",
+        "@semantic-release/changelog",
+        [
+            "@semantic-release/exec",
+            {
+                "publishCmd": "poetry version ${nextRelease.version} && python -c 'import re; version_file = \"codeshieldapp/__version__.py\"; version = \"${nextRelease.version}\"; with open(version_file, \"r+\") as f: content = f.read(); content = re.sub(r\"(__version__ = \\\\\"\")(.*)(\\\\\")\", r'\\\\1' + version + r'\\\\3', content); f.seek(0); f.write(content)'"
+            }
+        ],
+        [
+            "@semantic-release/git",
+            {
+                "assets": [
+                    "CHANGELOG.md",
+                    "pyproject.toml",
+                    "codeshieldapp/__version__.py"
+                ],
+                "message": "chore(release): ${nextRelease.version}-rc [skip ci]\n\n${nextRelease.notes}"
+            }
+        ]
     ]
-  }
+}
