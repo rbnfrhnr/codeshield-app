@@ -1,3 +1,11 @@
+## [1.1.17](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.16...v1.1.17) (2025-04-16)
+
+
+### Bug Fixes
+
+* changed branch definition and added fallback for checking release channel ([e315ffd](https://github.com/rbnfrhnr/codeshield-app/commit/e315ffdfcbced516f8fa1c4792fb36ca71e7cb76))
+* channel definition ([798affd](https://github.com/rbnfrhnr/codeshield-app/commit/798affd67f2869fabcb272bab9e40f514fa8cf08))
+
 ## [1.1.16](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.15...v1.1.16) (2025-04-16)
 
 
