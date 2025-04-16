@@ -1,3 +1,10 @@
+## [1.1.12](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.11...v1.1.12) (2025-04-16)
+
+
+### Bug Fixes
+
+* wrong release property ([aca190a](https://github.com/rbnfrhnr/codeshield-app/commit/aca190a1af956dae6375d2fc28b7dcee79cf8915))
+
 ## [1.1.11](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.10...v1.1.11) (2025-04-16)
 
 
