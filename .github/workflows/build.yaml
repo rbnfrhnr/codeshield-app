@@ -8,18 +8,23 @@ on:
 
 jobs:
   release:
-    name: Build and Release
+    name: Build, Release, and Dockerize
     runs-on: ubuntu-latest
 
     env:
       PYTHON_VERSION: '3.11'
+      NODE_VERSION: '20'
+      DOCKER_REGISTRY: env-rbnfrhnrtest-registry.jcloud.ik-server.com
+      IMAGE_NAME: codeshield-app
 
     steps:
-      - name: Checkout code
+      # Checkout source code
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # needed for semantic-release to analyze commits
+          fetch-depth: 0  # required for semantic-release to analyze commits
 
+      # Set up Python & Poetry
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -30,13 +35,14 @@ jobs:
           curl -sSL https://install.python-poetry.org | python3 -
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
-      - name: Install project dependencies
+      - name: Install dependencies
         run: poetry install --no-interaction
 
-      - name: Set up Node.js for semantic-release
+      # Set up Node.js & semantic-release
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install semantic-release and plugins
         run: |
@@ -48,9 +54,10 @@ jobs:
       - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npx semantic-release
-      - name: Build wheel package
+        run: npx semantic-release
+
+      # Build Python package
+      - name: Build Python wheel
         run: |
           poetry build
           mkdir -p build
@@ -60,13 +67,13 @@ jobs:
         id: extract_version
         run: |
           WHEEL_FILE=$(ls dist/*.whl | head -n 1)
-          echo "Found wheel: $WHEEL_FILE"
-          # Extract version from filename: name-version-py3-none-any.whl
           VERSION=$(basename "$WHEEL_FILE" | sed -E 's/^[^-]+-([^-]+)-.*$/\1/')
           echo "PACKAGE_VERSION=$VERSION" >> $GITHUB_ENV
           echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Extracted version: $VERSION"
 
-      - name: Create GitHub Release with wheel
+      # GitHub Release
+      - name: Upload wheel to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ steps.extract_version.outputs.version }}
@@ -75,21 +82,23 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
-      - name: Build & Tag Docker Image
+      # Docker build & push
+      - name: Build, Tag & Push Docker Image
         run: |
           VERSION=${{ steps.extract_version.outputs.version }}
-          REGISTRY=env-rbnfrhnrtest-registry.jcloud.ik-server.com/codeshield-app
+          IMAGE=${{ env.DOCKER_REGISTRY }}/${{ env.IMAGE_NAME }}
 
-          echo "Building Docker image for version $VERSION"
-          docker build -t $REGISTRY:$VERSION .
+          echo "Building Docker image: $IMAGE:$VERSION"
+          docker build -t $IMAGE:$VERSION .
 
+          # Push version tag
+          docker push $IMAGE:$VERSION
+
+          # Tag as latest or latest-rc
           if [[ "${GITHUB_REF##*/}" == "main" ]]; then
-            docker tag $REGISTRY:$VERSION $REGISTRY:latest
-            docker push $REGISTRY:latest
+            docker tag $IMAGE:$VERSION $IMAGE:latest
+            docker push $IMAGE:latest
           elif [[ "${GITHUB_REF##*/}" == "staging" ]]; then
-            docker tag $REGISTRY:$VERSION $REGISTRY:latest-rc
-            docker push $REGISTRY:latest-rc
+            docker tag $IMAGE:$VERSION $IMAGE:latest-rc
+            docker push $IMAGE:latest-rc
           fi
-
-          docker push $REGISTRY:$VERSION
