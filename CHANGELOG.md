@@ -1,3 +1,17 @@
+## [1.1.9](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.8...v1.1.9) (2025-04-16)
+
+
+### Bug Fixes
+
+* another try ([ff485a3](https://github.com/rbnfrhnr/codeshield-app/commit/ff485a3ac6a90b7e8fa88a4df174a85b879bfb9a))
+* missing github_ref env variable. switched to release channel ([73c0b2a](https://github.com/rbnfrhnr/codeshield-app/commit/73c0b2ab9715e80014913842caa6deee9488c8fe))
+* new way to add -rc suffix to version ([f30c880](https://github.com/rbnfrhnr/codeshield-app/commit/f30c8803aa87e20504ce5a72da9d93e7d9128bdd))
+* prerealse flag missing ([5530748](https://github.com/rbnfrhnr/codeshield-app/commit/55307487b8a383377d502fe16368ba61c3e59517))
+* rc suffix for staging version ([981f1d5](https://github.com/rbnfrhnr/codeshield-app/commit/981f1d5e396470b1af232ec9ad2345ff89466bc1))
+* release channel depending ([06690a4](https://github.com/rbnfrhnr/codeshield-app/commit/06690a44ca8a86b4776aefaa1361c096933a4f12))
+* switched version referencing in .releaserc ([de167a3](https://github.com/rbnfrhnr/codeshield-app/commit/de167a3daa2ea32dd2ad271e5b7b3a7dba02aaf7))
+* version variable not found ([b564b42](https://github.com/rbnfrhnr/codeshield-app/commit/b564b4295e56b6bfff5f1053f7d60175617b7d91))
+
 ## [1.1.8](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.7...v1.1.8) (2025-04-16)
 
 
