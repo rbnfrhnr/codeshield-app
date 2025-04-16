@@ -1,3 +1,13 @@
+## [1.1.14](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.13...v1.1.14) (2025-04-16)
+
+
+### Bug Fixes
+
+* changed to more verbose if else statement ([2298992](https://github.com/rbnfrhnr/codeshield-app/commit/22989922714f6e8f9d2cb24bfe4ae4cbb7bf41a7))
+* optimized code for versioning ([cd733e0](https://github.com/rbnfrhnr/codeshield-app/commit/cd733e09169c4fb03cdae1c4e1666daae04b7588))
+* reset version ([7f7e922](https://github.com/rbnfrhnr/codeshield-app/commit/7f7e922e7419794d462abf1b7d461223ee14b0e0))
+* yaml syntax error ([590920a](https://github.com/rbnfrhnr/codeshield-app/commit/590920a4ed9d6f24a28929a2086306271f4e3f1f))
+
 ## [1.1.13](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.12...v1.1.13) (2025-04-16)
 
 
