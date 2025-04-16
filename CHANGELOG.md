@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.4...v1.1.5) (2025-04-16)
+
+
+### Bug Fixes
+
+* another try at fixing the publishcmd ([2a38d7d](https://github.com/rbnfrhnr/codeshield-app/commit/2a38d7d7e913f534f0e89526fa3b4d8a82377a13))
+
 ## [1.1.4](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.3...v1.1.4) (2025-04-16)
 
 
