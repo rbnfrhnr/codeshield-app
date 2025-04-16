@@ -1,3 +1,10 @@
+## [1.1.20](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.19...v1.1.20) (2025-04-16)
+
+
+### Bug Fixes
+
+* yaml def ([5a31dd6](https://github.com/rbnfrhnr/codeshield-app/commit/5a31dd60de8034954e26e5fb7815a5c584e299c1))
+
 ## [1.1.19](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.18...v1.1.19) (2025-04-16)
 
 
