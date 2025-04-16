@@ -1,3 +1,10 @@
+# [1.2.0-rc.4](https://github.com/rbnfrhnr/codeshield-app/compare/v1.2.0-rc.3...v1.2.0-rc.4) (2025-04-16)
+
+
+### Bug Fixes
+
+* missing fi statement ([98303a8](https://github.com/rbnfrhnr/codeshield-app/commit/98303a82d6d7b32b168106142bab9a69e2ae3949))
+
 # [1.2.0-rc.3](https://github.com/rbnfrhnr/codeshield-app/compare/v1.2.0-rc.2...v1.2.0-rc.3) (2025-04-16)
 
 
