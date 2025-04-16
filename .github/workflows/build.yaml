@@ -134,5 +134,11 @@ jobs:
             exit 0
           fi
 
-          echo "Updating  $DEPLOYMENT_FILE"
-          kubectl rollout restart deployment -f "$DEPLOYMENT_FILE"
+          echo "Updating $DEPLOYMENT_FILE"
+          APPLY_OUTPUT=$(kubectl apply -f "$DEPLOYMENT_FILE")
+          echo "$APPLY_OUTPUT"
+
+          # Perform rollout restart if output says 'unchanged'
+          if [[ "$APPLY_OUTPUT" == *"unchanged"* ]]; then
+            echo "Triggering rollout restart for deployment codeshield-app"
+            kubectl rollout restart deployment/codeshield-app
