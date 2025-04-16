@@ -1,3 +1,10 @@
+## [1.1.23](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.22...v1.1.23) (2025-04-16)
+
+
+### Bug Fixes
+
+* cleanup of unnecesary code ([c0fcc6b](https://github.com/rbnfrhnr/codeshield-app/commit/c0fcc6b8f997aa13e13d0a166a71e04ccd4c36ef))
+
 ## [1.1.22](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.21...v1.1.22) (2025-04-16)
 
 
