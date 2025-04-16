@@ -8,23 +8,4 @@ plugins:
   - "@semantic-release/release-notes-generator"
   - "@semantic-release/changelog"
 
-  - 
-    path: "@semantic-release/git"
-    assets:
-      - "CHANGELOG.md"
-      - "pyproject.toml"
-      - "codeshieldapp/__version__.py"
-    message: |
-      chore(release): ${nextRelease.version} [skip ci]
-
-      ${nextRelease.notes}
-
-  - 
-    path: "@semantic-release/github"
-    assets:
-      - "CHANGELOG.md"
-      - "pyproject.toml"
-      - "codeshieldapp/__version__.py"
-      - "build/*.whl"
-    releaseName: ${nextRelease.version}
-    prerelease: true
+  
