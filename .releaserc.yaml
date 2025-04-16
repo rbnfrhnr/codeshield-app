@@ -11,8 +11,8 @@ plugins:
   - 
     path: "@semantic-release/exec"
     prepareCmd: |
-        # Check if on staging branch and append -rc to the version if true
-        if [[ "${GITHUB_REF}" == "refs/heads/staging" ]]; then
+        # Determine if we are on the staging branch or not
+        if [[ "${nextRelease.channel}" == "rc" ]]; then
           version="${nextRelease.version}-rc"
         else
           version="${nextRelease.version}"
@@ -34,3 +34,12 @@ plugins:
       - "pyproject.toml"
       - "codeshieldapp/__version__.py"
     message: "chore(release): ${nextRelease.version}-rc [skip ci]\n\n${nextRelease.notes}"
+
+  - 
+    path: "@semantic-release/github"
+    assets:
+      - "CHANGELOG.md"
+      - "pyproject.toml"
+      - "codeshieldapp/__version__.py"
+    releaseName: "${nextRelease.version}"  # Ensure GitHub release uses the correct version
+    prerelease: true  # Mark as a prerelease if it's an rc
