@@ -1,3 +1,10 @@
+## [1.1.24](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.23...v1.1.24) (2025-04-16)
+
+
+### Bug Fixes
+
+* version reset and dev version ([3ba0961](https://github.com/rbnfrhnr/codeshield-app/commit/3ba0961f2d1ad38672db83856b29f37b958f09c5))
+
 ## [1.1.23](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.22...v1.1.23) (2025-04-16)
 
 
