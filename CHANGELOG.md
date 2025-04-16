@@ -1,3 +1,10 @@
+## [1.1.29-rc.3](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.29-rc.2...v1.1.29-rc.3) (2025-04-16)
+
+
+### Bug Fixes
+
+* var interpolation fix ([2c0d586](https://github.com/rbnfrhnr/codeshield-app/commit/2c0d586dc91db8ef704740ed2defd1e99f0c35fb))
+
 ## [1.1.29-rc.2](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.29-rc.1...v1.1.29-rc.2) (2025-04-16)
 
 
