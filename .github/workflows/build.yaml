@@ -52,7 +52,7 @@ jobs:
           # Add prerelease config if on staging branch
           if [[ "${GITHUB_REF##*/}" == "staging" ]]; then
             echo "Releasing RC version from staging..."
-            npx semantic-release --branches staging --prerelease rc
+            npx semantic-release
           else
             echo "Releasing regular version from main..."
             npx semantic-release
