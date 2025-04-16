@@ -1,3 +1,10 @@
+## [1.1.19](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.18...v1.1.19) (2025-04-16)
+
+
+### Bug Fixes
+
+* staging prerelease rc ([e74d5a7](https://github.com/rbnfrhnr/codeshield-app/commit/e74d5a72ae67c097220f0e0e6284e5aa4b8232fc))
+
 ## [1.1.18](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.17...v1.1.18) (2025-04-16)
 
 
