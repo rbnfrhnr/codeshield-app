@@ -49,11 +49,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Add prerelease config if on staging branch
-          if [[ "${GITHUB_REF##*/}" == "staging" ]]; then
-            echo "Releasing RC version from staging..."
-            npx semantic-release
-          else
-            echo "Releasing regular version from main..."
-            npx semantic-release
-          fi
+          npx semantic-release
