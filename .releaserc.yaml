@@ -11,11 +11,21 @@ plugins:
   - 
     path: "@semantic-release/exec"
     successCmd: |
-      # Update version in __version__.py
-      sed -i "s/^__version__ = .*/__version__ = '{{nextRelease.version}}'/" codeshieldapp/__version__.py
+      echo "Preparing version for release: {{nextRelease.version}}"
 
-      # Update version in pyproject.toml
-      sed -i "s/^version = .*/version = \"{{nextRelease.version}}\"/" pyproject.toml
+      # Update __version__.py with release version (including -rc if present)
+      if if [ "$CHANNEL" = "rc" ]; then
+        echo "__version__ = '{{nextRelease.version}}-rc'" > codeshieldapp/__version__.py
+      else
+        echo "__version__ = '{{nextRelease.version}}'" > codeshieldapp/__version__.py
+      fi
+
+      # Update pyproject.toml version
+      if [ "$CHANNEL" = "rc" ]; then
+        sed -i "s/^version = .*/version = \"{{nextRelease.version}}-rc\"/" pyproject.toml
+      else
+        sed -i "s/^version = .*/version = \"{{nextRelease.version}}\"/" pyproject.toml
+      fi
 
   - 
     path: "@semantic-release/git"
