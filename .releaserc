@@ -14,7 +14,7 @@
       [
         "@semantic-release/exec",
         {
-          "publishCmd": "poetry version ${nextRelease.version} && sed -i 's/^__version__ = .*/__version__ = \"${nextRelease.version}-rc\"/' codeshieldapp/__version__.py"
+          "publishCmd": "poetry version ${nextRelease.version} && python -c 'import re; version_file = \"codeshieldapp/__version__.py\"; version = \"${nextRelease.version}\"; with open(version_file, \"r+\") as f: content = f.read(); content = re.sub(r\"(__version__ = \").*(\")\", f'\\1\"{version}\"\\2', content); f.seek(0); f.write(content)'"
         }
       ],
       [
@@ -30,4 +30,3 @@
       ]
     ]
   }
-  
