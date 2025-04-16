@@ -1,3 +1,11 @@
+## [1.1.18](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.17...v1.1.18) (2025-04-16)
+
+
+### Bug Fixes
+
+* set to rc ([2b61f4a](https://github.com/rbnfrhnr/codeshield-app/commit/2b61f4a884800686ccef7cd0b1a028dee0eea11c))
+* trigger release ([444aca4](https://github.com/rbnfrhnr/codeshield-app/commit/444aca4a622f14cef2754e5e12efce24ced99b94))
+
 ## [1.1.17](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.16...v1.1.17) (2025-04-16)
 
 
