@@ -1,0 +1,27 @@
+{
+    "branches": [
+      "main",
+      {
+        "name": "staging",
+        "prerelease": "rc"
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/git",
+        {
+          "assets": ["CHANGELOG.md", "pyproject.toml"],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "poetry version ${nextRelease.version}"
+        }
+      ]
+    ]
+  }

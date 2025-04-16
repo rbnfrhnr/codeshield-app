@@ -1,0 +1,59 @@
+name: Build & Semantic Release
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+
+jobs:
+  release:
+    name: Build and Release
+    runs-on: ubuntu-latest
+
+    env:
+      PYTHON_VERSION: '3.11'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # needed for semantic-release to analyze commits
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Install project dependencies
+        run: poetry install --no-interaction
+
+      - name: Set up Node.js for semantic-release
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install semantic-release and plugins
+        run: |
+          npm install -g semantic-release \
+            @semantic-release/git \
+            @semantic-release/changelog \
+            @semantic-release/exec
+
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Add prerelease config if on staging branch
+          if [[ "${GITHUB_REF##*/}" == "staging" ]]; then
+            echo "Releasing RC version from staging..."
+            npx semantic-release --branches staging --prerelease rc
+          else
+            echo "Releasing regular version from main..."
+            npx semantic-release
+          fi
