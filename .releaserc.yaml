@@ -1,7 +1,7 @@
 branches:
   - main
   - staging:
-      prerelease: rc
+      prerelease: true
       channel: rc
 
 plugins:
@@ -13,14 +13,13 @@ plugins:
     path: "@semantic-release/exec"
     prepareCmd: |
       echo "channel is ${nextRelease.channel} "
-      if [ "${nextRelease.channel}" = "rc" ]; then
+      if [ "${nextRelease.channel}" = "rc" ] || [[ "${nextRelease.version}" == *-rc* ]]; then
         echo '__version__ = "${nextRelease.version}-rc"' > codeshieldapp/__version__.py
         sed -i 's/^version = .*/version = "${nextRelease.version}-rc"/' pyproject.toml
       else
         echo '__version__ = "${nextRelease.version}"' > codeshieldapp/__version__.py
         sed -i 's/^version = .*/version = "${nextRelease.version}"/' pyproject.toml
       fi
-
   - 
     path: "@semantic-release/git"
     assets:
