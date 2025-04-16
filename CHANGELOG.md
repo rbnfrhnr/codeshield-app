@@ -1,3 +1,10 @@
+## [1.1.29-rc.4](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.29-rc.3...v1.1.29-rc.4) (2025-04-16)
+
+
+### Bug Fixes
+
+* switched to prepareCmd ([b69b89c](https://github.com/rbnfrhnr/codeshield-app/commit/b69b89c26b0958dc283123e4848b3b3078bcffd9))
+
 ## [1.1.29-rc.3](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.29-rc.2...v1.1.29-rc.3) (2025-04-16)
 
 
