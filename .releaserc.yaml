@@ -11,9 +11,22 @@ plugins:
   - 
     path: "@semantic-release/exec"
     prepareCmd: |
-        sed --in-place 's/__version__ = ".*"/__version__ = "${nextRelease.version}"/' codeshieldapp/__version__.py
+        # Check if on staging branch and append -rc to the version if true
+        if [[ "${GITHUB_REF}" == "refs/heads/staging" ]]; then
+          version="${nextRelease.version}-rc"
+        else
+          version="${nextRelease.version}"
+        fi
+
+        # Update __version__.py with the version
+        sed --in-place 's/__version__ = ".*"/__version__ = "'${version}'"/' codeshieldapp/__version__.py
+
+        # Update pyproject.toml with the version
+        sed --in-place 's/version = ".*"/version = "'${version}'"/' pyproject.toml
+
+        # Update poetry lock file and version
         poetry lock --no-update
-        poetry version ${nextRelease.version}
+        poetry version ${version}
   - 
     path: "@semantic-release/git"
     assets:
