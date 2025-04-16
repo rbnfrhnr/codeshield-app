@@ -13,7 +13,7 @@
       [
         "@semantic-release/exec",
         {
-          "publishCmd": "poetry version ${nextRelease.version} && sed -i 's/^__version__ = .*/__version__ = \"${nextRelease.version}\"/' codeshield_app/__version__.py"
+          "publishCmd": "poetry version ${nextRelease.version} && sed -i 's/^__version__ = .*/__version__ = \"${nextRelease.version}\"/' codeshieldapp/__version__.py"
         }
       ],
       [
