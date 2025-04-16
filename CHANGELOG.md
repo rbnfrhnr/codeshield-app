@@ -1,3 +1,10 @@
+## [1.1.11](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.10...v1.1.11) (2025-04-16)
+
+
+### Bug Fixes
+
+* added wheel files to release assets ([a3c4d16](https://github.com/rbnfrhnr/codeshield-app/commit/a3c4d16510877926137d064eaf233ab31c2f2e3b))
+
 ## [1.1.10](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.9...v1.1.10) (2025-04-16)
 
 
