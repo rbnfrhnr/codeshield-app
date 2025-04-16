@@ -1,3 +1,10 @@
+## [1.1.29-rc.6](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.29-rc.5...v1.1.29-rc.6) (2025-04-16)
+
+
+### Bug Fixes
+
+* create tag based on wheel version ([6978ce0](https://github.com/rbnfrhnr/codeshield-app/commit/6978ce0a596cd8e217d323d4bf17ac7a83282005))
+
 ## [1.1.29-rc.5](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.29-rc.4...v1.1.29-rc.5) (2025-04-16)
 
 
