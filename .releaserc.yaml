@@ -2,7 +2,7 @@ branches:
   - main
   - name: staging
     prerelease: rc
-    channel: pre/rc
+    channel: rc
 
 plugins:
   - "@semantic-release/commit-analyzer"
@@ -13,7 +13,7 @@ plugins:
     path: "@semantic-release/exec"
     prepareCmd: |
       echo "channel is ${nextRelease.channel}"
-      if [ "${nextRelease.channel}" = "rc" ] || [[ "${nextRelease.version}" == *-rc* ]]; then
+      if [ "{{nextRelease.channel}}" = "rc" ] || echo "{{nextRelease.version}}" | grep -q -- "-rc"; then
         echo '__version__ = "${nextRelease.version}-rc"' > codeshieldapp/__version__.py
         sed -i 's/^version = .*/version = "${nextRelease.version}-rc"/' pyproject.toml
       else
