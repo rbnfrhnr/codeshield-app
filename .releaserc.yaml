@@ -29,7 +29,7 @@ plugins:
       - "CHANGELOG.md"
       - "pyproject.toml"
       - "codeshieldapp/__version__.py"
-    message: "chore(release): ${nextRelease.version}-rc [skip ci]\n\n${nextRelease.notes}"
+    message: "chore(release): {{nextRelease.version}} [skip ci]\n\n{{nextRelease.notes}}"
 
   - 
     path: "@semantic-release/github"
@@ -37,5 +37,5 @@ plugins:
       - "CHANGELOG.md"
       - "pyproject.toml"
       - "codeshieldapp/__version__.py"
-    releaseName: "${nextRelease.version}"  # Ensure GitHub release uses the correct version
-    prerelease: true  # Mark as a prerelease if it's an rc
+    releaseName: "{{nextRelease.version}}"
+    prerelease: "{{nextRelease.channel}}" == "rc"
