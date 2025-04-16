@@ -1,3 +1,10 @@
+## [1.1.29-rc.2](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.29-rc.1...v1.1.29-rc.2) (2025-04-16)
+
+
+### Bug Fixes
+
+* added version number to __version__.py ([387dc9a](https://github.com/rbnfrhnr/codeshield-app/commit/387dc9a29621db43c5c93959171b3c8ad904532b))
+
 ## [1.1.29-rc.1](https://github.com/rbnfrhnr/codeshield-app/compare/v1.1.28...v1.1.29-rc.1) (2025-04-16)
 
 
