@@ -38,4 +38,4 @@ plugins:
       - "pyproject.toml"
       - "codeshieldapp/__version__.py"
     releaseName: "{{nextRelease.version}}"
-    prerelease: "{{nextRelease.channel}}" == "rc"
+    prerelease: true
